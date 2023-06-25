@@ -1,0 +1,16 @@
+# Toán tử rãi đối tượng, nếu sài dấu [] rãi mảng
+const {loading, staffs, errorMessage} = state;
+
+# Chú ý: expresstion trong JSX
+    <select className='form-control' onChange={handleChange} name='groupId' value={staff.groupId}>
+        <option value='0' key='0'>Select a group</option>
+        {/* {
+            [(<option value='1' key='1'>Select a group</option>), (<option value='2' key='2'>Select a group</option>)]
+        } */}
+        {
+            groups.map(group =>
+                (<option value={group.id} key={group.id}>{group.name}</option>)
+            )
+        }
+    </select>
+

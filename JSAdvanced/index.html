@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const promise = new Promise(
+            function executor(resolve, reject) {
+                // logic 
+                let number = 5;
+                if (number >= 5) {
+                    return resolve(1);
+                }
+                // return resolve({
+                //     message: "Ok",
+                //     code: 200
+                // });
+
+                return reject({
+                    message: "Internal server",
+                    code: 500
+                });
+            }
+        )
+
+        // promise chain
+        promise
+            .then(function (data) {
+                // console.log(data.message);
+                console.log(data);
+                return ++data;
+            })
+            .then(function (data) {
+                console.log(data);
+                // return ++data;
+            })
+            .then(function (data) {
+                console.log(data);
+            })
+            .catch(function (error) {
+                console.log(error.code);
+            })
+            .finally(function () {
+                console.log("done");
+            })
+    </script>
+</body>
+
+</html>
