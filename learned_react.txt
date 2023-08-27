@@ -1,3 +1,14 @@
+npx create-react-app ten-du-an
+cd ten-du-an
+npm start
+
+//------------
+Cài fortawesome
+npm install @fortawesome/fontawesome-free
+Cài bootstrap thuần
+npm install bootstrap
+
+
 # Toán tử rãi đối tượng, nếu sài dấu [] rãi mảng
 const {loading, staffs, errorMessage} = state;
 let [number1, number2, number3] = numbers;

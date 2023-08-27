@@ -1,0 +1,19 @@
+function App() {
+  const [appstate, setAppState] = useState({
+    isAddEdit: false
+  });
+  const {isAddEdit} = appstate;
+  return (
+    <>
+      {
+        isAddEdit ? <CreateUser /> :  <Users />
+      }
+    </>
+  );
+}
+### vì sao cần dấu <></>
+<>
+      {
+        isAddEdit ? <CreateUser /> :  <Users />
+      }
+</>
